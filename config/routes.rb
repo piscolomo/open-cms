@@ -1,11 +1,16 @@
 Rails.application.routes.draw do
-  resources :categories
+
   namespace :admin do
+    resources :categories
     resources :posts
   end
 
   Post.where.not(slug: nil).each do |p|
     get "/#{p.slug}", controller: "posts", action: "show", id: p.id
+  end
+
+  Category.where.not(slug: nil).each do |c|
+    get "/#{c.slug}", controller: "categories", action: "show", id: c.id
   end
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

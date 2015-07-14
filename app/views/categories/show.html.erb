@@ -1,14 +1,12 @@
-<p id="notice"><%= notice %></p>
+<h1>Category <%= @category.name %></h1>
 
-<p>
-  <strong>Name:</strong>
-  <%= @category.name %>
-</p>
+<h2>Posts</h2>
 
-<p>
-  <strong>Slug:</strong>
-  <%= @category.slug %>
-</p>
-
-<%= link_to 'Edit', edit_category_path(@category) %> |
-<%= link_to 'Back', categories_path %>
+<% @category.posts.each do |post| %>
+  <div>
+    <h3><%= link_to post.title, post.slug %></h3>
+    <span class="date"><%= time_ago_in_words(post.created_at) %></span>
+    <%= simple_format post.body %>
+    </hr>
+  </div>
+<% end %>
