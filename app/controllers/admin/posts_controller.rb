@@ -70,7 +70,7 @@ module Admin
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def post_params
-      params.require(:post).permit(:title, :body, :slug)
+      params.require(:post).permit(:title, :body, :slug, :category_id)
     end
   end
 end
