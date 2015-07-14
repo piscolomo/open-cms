@@ -1,5 +1,6 @@
 module Admin
   class PostsController < ApplicationController
+    layout "admin"
     before_action :set_post, only: [:show, :edit, :update, :destroy]
 
     # GET /posts

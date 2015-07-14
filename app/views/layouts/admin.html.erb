@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>OpenCms</title>
+  <!-- FontAwesome 4.3.0 -->
+  <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
+  <!-- Ionicons 2.0.0 -->
+  <link href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css" rel="stylesheet" type="text/css" />
+  <!-- Theme style -->
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+</head>
+<body class="skin-blue sidebar-mini">
+  <div class="wrapper">
+    <header class="main-header">
+      <!-- Logo -->
+      <a href="index2.html" class="logo">
+        <!-- mini logo for sidebar mini 50x50 pixels -->
+        <span class="logo-mini"><b>A</b>LT</span>
+        <!-- logo for regular state and mobile devices -->
+        <span class="logo-lg"><b>Admin</b>LTE</span>
+      </a>
+      <!-- Header Navbar: style can be found in header.less -->
+      <nav class="navbar navbar-static-top" role="navigation">
+        <!-- Sidebar toggle button-->
+        <a href="#" class="sidebar-toggle" data-toggle="offcanvas" role="button">
+          <span class="sr-only">Toggle navigation</span>
+        </a>
+        <div class="navbar-custom-menu">
+          <ul class="nav navbar-nav">
+            <!-- User Account: style can be found in dropdown.less -->
+            <li class="dropdown user user-menu">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                <%= image_tag "user2-160x160.jpg", class: "user-image" %>
+                <span class="hidden-xs">Julio Lopez</span>
+              </a>
+              <ul class="dropdown-menu">
+                <!-- User image -->
+                <li class="user-header">
+                  <%= image_tag "user2-160x160.jpg", class: "img-circle" %>
+                  <p>
+                    Julio Lopez - Web Developer
+                    <small>Member since Nov. 2012</small>
+                  </p>
+                </li>
+                <!-- Menu Footer-->
+                <li class="user-footer">
+                  <div class="pull-left">
+                    <a href="#" class="btn btn-default btn-flat">Profile</a>
+                  </div>
+                  <div class="pull-right">
+                    <a href="#" class="btn btn-default btn-flat">Sign out</a>
+                  </div>
+                </li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+      </nav>
+    </header>
+    <!-- Left side column. contains the logo and sidebar -->
+    <aside class="main-sidebar">
+      <!-- sidebar: style can be found in sidebar.less -->
+      <section class="sidebar">
+        <!-- Sidebar user panel -->
+        <div class="user-panel">
+          <div class="pull-left image">
+            <%= image_tag "user2-160x160.jpg", class: "img-circle" %>
+          </div>
+          <div class="pull-left info">
+            <p>Julio Lopez</p>
+            <a href="#"><i class="fa fa-circle text-success"></i> Online</a>
+          </div>
+        </div>
+        <!-- search form -->
+        <form action="#" method="get" class="sidebar-form">
+          <div class="input-group">
+            <input type="text" name="q" class="form-control" placeholder="Search..." />
+            <span class="input-group-btn">
+              <button type="submit" name="search" id="search-btn" class="btn btn-flat"><i class="fa fa-search"></i></button>
+            </span>
+          </div>
+        </form>
+        <!-- /.search form -->
+        <!-- sidebar menu: : style can be found in sidebar.less -->
+        <ul class="sidebar-menu">
+          <li class="header">MAIN NAVIGATION</li>
+          <li><a href="http://localhost:3000/admin/posts"><i class="fa fa-book"></i> <span>Posts</span><span class="label label-primary pull-right">4</span></a></li>
+          <li><a href="http://localhost:3000/admin/categories"><i class="fa fa-book"></i> <span>Categories</span><span class="label label-primary pull-right">4</span></a></li>
+        </ul>
+      </section>
+      <!-- /.sidebar -->
+    </aside>
+
+    <!-- Content Wrapper. Contains page content -->
+    <div class="content-wrapper">
+      <!-- Content Header (Page header) -->
+      <section class="content-header">
+        <h1>
+          Dashboard
+          <small>Control panel</small>
+        </h1>
+        <ol class="breadcrumb">
+          <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
+          <li class="active">Dashboard</li>
+        </ol>
+      </section>
+
+      <!-- Main content -->
+      <section class="content">
+        <%= yield %>
+      </section>
+
+    </div><!-- /.content-wrapper -->
+    <footer class="main-footer">
+      <div class="pull-right hidden-xs">
+        <b>Version</b> 0.1.0
+      </div>
+      <strong>Copyright &copy; 2015 <a href="http://juliolopezmontalvo.com">Julio Lopez Montalvo</a>.</strong> All rights reserved.
+    </footer>
+  </div><!-- ./wrapper -->
+  
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <!-- jQuery UI 1.11.4 -->
+  <script src="https://code.jquery.com/ui/1.11.4/jquery-ui.min.js" type="text/javascript"></script>
+</body>
+</html>
