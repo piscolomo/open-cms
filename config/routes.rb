@@ -2,6 +2,10 @@ Rails.application.routes.draw do
   namespace :admin do
     resources :posts
   end
+
+  Post.where.not(slug: nil).each do |p|
+    get "/#{p.slug}", controller: "posts", action: "show", id: p.id
+  end
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
