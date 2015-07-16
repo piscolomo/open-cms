@@ -1,6 +1,6 @@
 module Admin
   class PostsController < ApplicationController
-    layout "admin"
+    layout :set_layout
     before_action :set_post, only: [:show, :edit, :update, :destroy]
 
     # GET /posts
@@ -67,6 +67,10 @@ module Admin
     # Use callbacks to share common setup or constraints between actions.
     def set_post
       @post = Post.find(params[:id])
+    end
+
+    def set_layout
+      ['new', 'edit'].include?(action_name) ? "editor" : "admin"
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.

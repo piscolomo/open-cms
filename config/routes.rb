@@ -2,8 +2,8 @@ Rails.application.routes.draw do
   root 'home#index'
 
   namespace :admin do
-    resources :categories
-    resources :posts
+    resources :categories, except: [:show]
+    resources :posts, except: [:show]
   end
 
   Post.where.not(slug: nil).each do |p|
