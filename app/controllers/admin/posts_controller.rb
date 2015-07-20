@@ -6,7 +6,7 @@ module Admin
     # GET /posts
     # GET /posts.json
     def index
-      @posts = Post.all
+      @posts = Post.order("created_at desc")
     end
 
     # GET /posts/1
@@ -30,7 +30,7 @@ module Admin
 
       respond_to do |format|
         if @post.save
-          format.html { redirect_to admin_post_url(@post), notice: 'Post was successfully created.' }
+          format.html { redirect_to admin_posts_url, notice: 'Post was successfully created.' }
           format.json { render :show, status: :created, location: @post }
         else
           format.html { render :new }
@@ -44,7 +44,7 @@ module Admin
     def update
       respond_to do |format|
         if @post.update(post_params)
-          format.html { redirect_to admin_post_url(@post), notice: 'Post was successfully updated.' }
+          format.html { redirect_to admin_posts_url, notice: 'Post was successfully updated.' }
           format.json { render :show, status: :ok, location: @post }
         else
           format.html { render :edit }
