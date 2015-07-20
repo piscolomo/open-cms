@@ -48,6 +48,10 @@ group :development, :test do
   gem 'spring'
 
   gem 'rspec-rails', '~> 3.0'
-  gem 'factory_girl_rails'
+  gem 'whiny_validation'
 end
 
+group :test do
+  gem 'database_cleaner'
+  gem 'factory_girl_rails'
+end

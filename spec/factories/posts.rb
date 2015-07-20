@@ -1,7 +1,7 @@
 FactoryGirl.define do
   factory :post do
     title "Demo title"
-    text "Hello World"
+    body "Hello World"
     slug "demo-title"
     category
   end
