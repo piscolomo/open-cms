@@ -3,6 +3,7 @@ module Sluggable
 
   included do
     before_save :define_slug
+    after_save :reload_routes
   end
 
   private
@@ -13,5 +14,9 @@ module Sluggable
 
   def label_name
     self.is_a?(Post) ? "title" : "name"
+  end
+
+  def reload_routes
+    Rails.application.reload_routes! if self.slug_changed?
   end
 end
