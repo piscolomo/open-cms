@@ -13,15 +13,19 @@
           <a href="#"><i class="fa fa-circle text-success"></i> Online</a>
         </div>
       </div>
-      <%= link_to 'Back', admin_posts_path %>
       <!-- sidebar menu: : style can be found in sidebar.less -->
       <ul class="sidebar-menu">
-        <li class="header">OPTIONS</li>
-        <%= f.label :title %><br>
-        <%= f.text_field :title %>
-        <%= f.label :category_id %><br>
-        <%= f.select :category_id, Category.all.map{|c| [c.name, c.id]} %>
-        <%= f.submit %>
+        <li><a href="#">Back</a></li>
+        <li class="header">Title</li>
+        <li><a href="#"><%= f.text_field :title, placeholder: "Title" %><br></a></li>
+        <li class="header">Category</li>
+        <li>
+          <a href="#"><div class="form-group">
+            <%= f.select :category_id, Category.all.map{|c| [c.name, c.id]}, {}, class: "form-control" %>
+          </div></a>
+        </li>
+        <li><a href="#"><%= f.submit nil, class: "btn btn-primary" %></a></li>
+        <li><%= link_to 'Back', admin_posts_path %></li>
       </ul>
     </section>
     <!-- /.sidebar -->
