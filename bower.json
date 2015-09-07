@@ -17,6 +17,10 @@
     "tests"
   ],
   "dependencies": {
-    "medium-editor-insert-plugin": "^1.0"
+    "medium-editor-insert-plugin": "2.0.1",
+    "medium-editor": "^5.0.0"
+  },
+  "resolutions": {
+    "medium-editor": "^5.0.0"
   }
 }
