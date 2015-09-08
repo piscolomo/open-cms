@@ -30,7 +30,14 @@
         autoLink: true
       });
       $('.editable').mediumInsert({
-        editor: editor
+        editor: editor,
+        addons: {
+          images: {
+            fileUploadOptions: {
+              url: '/images/upload'
+            }
+          }
+        }
       });
     });
   </script>

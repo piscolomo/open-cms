@@ -13,6 +13,8 @@ Rails.application.routes.draw do
   Category.where.not(slug: nil).each do |c|
     get "/#{c.slug}", controller: "categories", action: "show", id: c.id
   end
+
+  post 'images/upload' => 'images#upload'
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
