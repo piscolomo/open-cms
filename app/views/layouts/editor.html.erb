@@ -24,6 +24,11 @@
   <script>
     $(function(){
       var editor = new MediumEditor('.editable', {
+        keyboardCommands: false,
+        imageDragging: false,
+        toolbar: {
+          buttons: ['bold', 'italic', 'underline', 'anchor', 'h2', 'orderedlist', 'unorderedlist', 'justifyLeft', 'justifyCenter', 'justifyRight']
+        },
         placeholder: {
           text: 'Type your text',
         },
