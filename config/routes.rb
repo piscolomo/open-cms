@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
   root 'home#index'
+  get '/admin', controller: "templates", action: "admin"
 
   namespace :admin do
     resources :categories, except: [:show]
